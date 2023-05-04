@@ -13,22 +13,27 @@ body {
   font-family: $primary-font-family;
 }
 
-.wrapper {
-  position: relative;
+.main-container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
   background-image:  url('/img/bg-main.png');
   background-repeat: no-repeat;
   background-color: #131316;
   object-fit: cover;
   height: 100%;
   border-radius: $primary-border-radius;
+  padding: 0 20px;
 }
 
 .wrapper::before {
-  width: 1000px;
-  height: 500px;
   position: absolute;
+  width: 100%;
+  height: 500px;
   content: '';
   background-image: linear-gradient(180deg, rgba(19, 19, 22, 0) 0%, #131316 100%);
   top: 160px;
@@ -45,7 +50,7 @@ body {
   border: 0;
 }
 
-.container {
+.section-container {
   max-width: 620px;
   margin: 0 auto;
 }
@@ -56,8 +61,10 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color: #fff;
+  color: $secondary-text-color;
   text-decoration: none;
+  
+  position: relative;
   display: inline-flex;
   min-width: 180px;
   height: 40px;
@@ -70,10 +77,19 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   border-radius: $primary-border-radius;
-  position: relative;
   background: linear-gradient(87.23deg, rgba(128, 26, 179, 0) -91.42%, #4c4cff 99.79%);
-  z-index: 5;
   transition: background-color .3s;
+  z-index: 5;
+}
+
+@media (max-width: 576px) {
+  .button {
+    font-size: 12px;
+    line-height: 15px;
+    height: 30px;
+    min-width: 100px;
+    padding: 10px;
+  }
 }
 
 .button:before {
@@ -120,7 +136,7 @@ body {
   font-weight: 400;
   font-size: 32px;
   line-height: 42.56px;
-  color: #fff;
+  color: $secondary-text-color;
 }
 
 .goods {
@@ -136,8 +152,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    width: 100%;
-    margin: 0 auto;
+    // width: 100%;
+    // margin: 0 auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -150,7 +171,7 @@ body {
   // padding: 0 10px 10px 10px;
 
   // width: 300px;/*******/
-  flex: 1 1 200px;
+  // flex: 1 1 200px;
   aspect-ratio: 1/0.6;
 
   &__img-container {
@@ -176,6 +197,18 @@ body {
     flex-direction: column;
     gap: 10px;
     padding: 0 10px;
+  }
+
+  &__product-name {
+    font-family: $primary-font-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #131316;
   }
 
   &__price-brief {
@@ -216,30 +249,13 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #ff0000;
-    color: #fff;
+    color: $secondary-text-color;
     font-weight: 700;
     font-size: 16px;
     line-height: 21px;
     border-radius: $primary-border-radius;
     width: 60px;
     height: 24px;
-  }
-}
-
-.card-goods {
-  display: flex;
-  flex-direction: column;
-
-  &__product-name {
-    font-family: $primary-font-family;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #131316;
   }
 }
 
@@ -254,13 +270,17 @@ body {
 
 }
 
-.card--lg {
-  padding-left: 5px;
-}
+// .card--lg {
+//   padding-left: 5px;
+// }
 
 // PROMO SECTION 
 .promo {
   padding-bottom: 30px;
+
+  @media (max-width: 576px) {
+    padding-bottom: 10px;
+  }
 
   &__title {
     display: flex;
@@ -274,6 +294,10 @@ body {
   flex-direction: row;
   gap: 8px;
   padding: 30px 0 10px;
+
+  @media (max-width: 576px) {
+    padding-top: 10px;
+  }
 
   &__point {
     width: 28px;
@@ -295,14 +319,26 @@ body {
   &__content {
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      padding: 0 10px;
+    }
   }
 
   &__img-wrapper {
-    width: 310px;
+    width: 48%;
     background: url('/img/ship--3.png');
     background-size: 140%;
     background-position: center;
     background-repeat: no-repeat;
+
+    @media (max-width: 576px) {
+      height: 218px;
+      width: 100%;
+      object-fit: cover;
+      background-position: center;
+    }
 
     img {
       width: 100%;
@@ -313,6 +349,11 @@ body {
   &__info {
     width: 40%;
     color: #131316;
+
+    @media (max-width: 576px) {
+      width: 100%;
+      padding: 0 10px;
+    }
   }
 
   &__name {
@@ -376,6 +417,10 @@ body {
   &__button {
     min-width: 280px;
     padding: 30px 10px;
+    
+    @media (max-width: 576px) {
+      min-width: 80%;
+    }
   }
 
   &__footer {
@@ -390,6 +435,11 @@ body {
 .footer {
   padding: 30px 0 25px;
 
+  @media (max-width: 576px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   &__title {
     font-family: $primary-font-family;
     font-style: normal;
@@ -400,7 +450,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #FFFFFF;
+    color: $secondary-text-color;
   }
 
   &__bar {
@@ -427,9 +477,13 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: $secondary-text-color;
     text-decoration-line: none;
     cursor: pointer;
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
   }
 
   &__contacts-mail {
@@ -438,9 +492,13 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: $secondary-text-color;
     text-decoration: underline;
     cursor: pointer;
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -450,6 +508,15 @@ body {
   justify-content: center;
   gap: 20px;
   padding: 19px 0 25px;
+
+  @media (max-width: 576px) {
+    font-size: 12px;
+    padding-bottom: 10px;
+
+    img {
+      width: 60%;
+    }
+  }
 }
 
 .socials-logo {
@@ -459,3 +526,16 @@ body {
 .socials-logo:hover {
   opacity: 60%;
 }
+
+// Questions:
+
+// <br> внутри разметки
+// scss сборка и гитхаб
+// семантические теги, футер внутри article
+// модификатор промо кнопки
+// как исключить модификатор img контейнера
+// hover для градиента, promocode button
+// (не)отдельная сущность для промо карточки
+// pixel perfect
+// <div class="section-container"> или просто контейнер
+// что с градиентом

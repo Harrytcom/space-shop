@@ -2,10 +2,14 @@ body {
   font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-.wrapper {
-  position: relative;
+.main-container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
   background-image: url("/img/bg-main.png");
   background-repeat: no-repeat;
   background-color: #131316;
@@ -13,12 +17,13 @@ body {
      object-fit: cover;
   height: 100%;
   border-radius: 4px;
+  padding: 0 20px;
 }
 
 .wrapper::before {
-  width: 1000px;
-  height: 500px;
   position: absolute;
+  width: 100%;
+  height: 500px;
   content: "";
   background-image: linear-gradient(180deg, rgba(19, 19, 22, 0) 0%, #131316 100%);
   top: 160px;
@@ -35,7 +40,7 @@ body {
   border: 0;
 }
 
-.container {
+.section-container {
   max-width: 620px;
   margin: 0 auto;
 }
@@ -48,6 +53,7 @@ body {
   line-height: 21px;
   color: #fff;
   text-decoration: none;
+  position: relative;
   display: inline-flex;
   min-width: 180px;
   height: 40px;
@@ -60,12 +66,20 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 4px;
-  position: relative;
   background: linear-gradient(87.23deg, rgba(128, 26, 179, 0) -91.42%, #4c4cff 99.79%);
-  z-index: 5;
   transition: background-color 0.3s;
+  z-index: 5;
 }
 
+@media (max-width: 576px) {
+  .button {
+    font-size: 12px;
+    line-height: 15px;
+    height: 30px;
+    min-width: 100px;
+    padding: 10px;
+  }
+}
 .button:before {
   position: absolute;
   content: "";
@@ -125,8 +139,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  width: 100%;
-  margin: 0 auto;
+}
+.goods__card {
+  display: flex;
+  flex-direction: column;
 }
 
 .card {
@@ -135,7 +151,6 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background: rgba(255, 255, 255, 0.95);
   border-radius: 4px;
-  flex: 1 1 200px;
   aspect-ratio: 1/0.6;
 }
 .card__img-container {
@@ -159,6 +174,17 @@ body {
   flex-direction: column;
   gap: 10px;
   padding: 0 10px;
+}
+.card__product-name {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #131316;
 }
 .card__price-brief {
   display: flex;
@@ -204,22 +230,6 @@ body {
   height: 24px;
 }
 
-.card-goods {
-  display: flex;
-  flex-direction: column;
-}
-.card-goods__product-name {
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #131316;
-}
-
 .card--sm {
   max-width: 200px;
   min-height: 310px;
@@ -230,12 +240,13 @@ body {
   min-height: 340px;
 }
 
-.card--lg {
-  padding-left: 5px;
-}
-
 .promo {
   padding-bottom: 30px;
+}
+@media (max-width: 576px) {
+  .promo {
+    padding-bottom: 10px;
+  }
 }
 .promo__title {
   display: flex;
@@ -248,6 +259,11 @@ body {
   flex-direction: row;
   gap: 8px;
   padding: 30px 0 10px;
+}
+@media (max-width: 576px) {
+  .rate {
+    padding-top: 10px;
+  }
 }
 .rate__point {
   width: 28px;
@@ -266,12 +282,27 @@ body {
   display: flex;
   flex-direction: row;
 }
+@media (max-width: 576px) {
+  .card-promo__content {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+}
 .card-promo__img-wrapper {
-  width: 310px;
+  width: 48%;
   background: url("/img/ship--3.png");
   background-size: 140%;
   background-position: center;
   background-repeat: no-repeat;
+}
+@media (max-width: 576px) {
+  .card-promo__img-wrapper {
+    height: 218px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background-position: center;
+  }
 }
 .card-promo__img-wrapper img {
   width: 100%;
@@ -280,6 +311,12 @@ body {
 .card-promo__info {
   width: 40%;
   color: #131316;
+}
+@media (max-width: 576px) {
+  .card-promo__info {
+    width: 100%;
+    padding: 0 10px;
+  }
 }
 .card-promo__name {
   padding-top: 8px;
@@ -335,6 +372,11 @@ body {
   min-width: 280px;
   padding: 30px 10px;
 }
+@media (max-width: 576px) {
+  .card-promo__button {
+    min-width: 80%;
+  }
+}
 .card-promo__footer {
   display: flex;
   flex-direction: column;
@@ -346,6 +388,12 @@ body {
 .footer {
   padding: 30px 0 25px;
 }
+@media (max-width: 576px) {
+  .footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
 .footer__title {
   font-family: "Segoe UI", Tahoma, sans-serif;
   font-style: normal;
@@ -356,7 +404,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #FFFFFF;
+  color: #fff;
 }
 .footer__bar {
   display: flex;
@@ -380,9 +428,14 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color: #FFFFFF;
+  color: #fff;
   text-decoration-line: none;
   cursor: pointer;
+}
+@media (max-width: 576px) {
+  .footer__contacts-phone {
+    font-size: 12px;
+  }
 }
 .footer__contacts-mail {
   font-family: "Segoe UI", Tahoma, sans-serif;
@@ -390,9 +443,14 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color: #FFFFFF;
+  color: #fff;
   text-decoration: underline;
   cursor: pointer;
+}
+@media (max-width: 576px) {
+  .footer__contacts-mail {
+    font-size: 12px;
+  }
 }
 
 .socials-logo-group {
@@ -401,6 +459,15 @@ body {
   justify-content: center;
   gap: 20px;
   padding: 19px 0 25px;
+}
+@media (max-width: 576px) {
+  .socials-logo-group {
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+  .socials-logo-group img {
+    width: 60%;
+  }
 }
 
 .socials-logo {
