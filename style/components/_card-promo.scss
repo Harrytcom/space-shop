@@ -1,15 +1,24 @@
 .card-promo {
 
   &__content {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
     padding: 0 10px;
+    -webkit-box-align: center;
     align-items: center;
     
     @media (min-width: 660px) {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
       flex-direction: row;
+      -webkit-box-pack: start;
       justify-content: flex-start;
+      -webkit-box-align: start;
       align-items: flex-start;
     }
   }
@@ -38,9 +47,11 @@
   &__info {
     width: 100%;
     color: $primary-text-color;
+    -webkit-box-flex: 1;
     flex-grow: 1;
     
     @media (min-width: 660px) {
+      -webkit-box-flex: 0;
       flex-grow: 0;
       width: 40%;
     }
@@ -58,24 +69,34 @@
   }
 
   &__price-brief {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-flow: row nowrap;
+    -webkit-box-align: center;
     align-items: center;
     text-align: center;
+    -webkit-box-pack: justify;
     justify-content: space-between;
     padding-bottom: 26px;
   }
 
   &__current-price {
     font-weight: 700;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-align: center;
     align-items: center;
     text-align: center;
   }
 
   &__prices {
+    display: -webkit-box;
     display: flex;
     gap: 8px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
     font-size: 0.8125rem;
     line-height: $primary-line-height;
@@ -83,7 +104,9 @@
   }
 
   &__discount {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: justify;
     justify-content: space-between;
   }
 
@@ -98,7 +121,10 @@
   }
 
   &__footer {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
     gap: 10px;
     padding-bottom: 35px;

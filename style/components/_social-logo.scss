@@ -1,4 +1,5 @@
 .socials-logo {
+  -webkit-transition: $primary-transition opacity;
   transition: $primary-transition opacity;
 }
 
@@ -7,8 +8,12 @@
 }
 
 .socials-logo-group {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   flex-flow: row wrap;
+  -webkit-box-pack: center;
   justify-content: center;
   gap: 20px;
   padding: 19px 0 25px;

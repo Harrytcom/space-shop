@@ -2,7 +2,9 @@
   padding-bottom: 30px;
 
   &__title {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
     padding-bottom: 24px;
   }

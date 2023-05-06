@@ -2,34 +2,45 @@
   padding: 23px 0 55px 0;
 
   &__title {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
     padding-bottom: 23px;
   }
 
   &__cards-list {
+    display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 
     @media (max-width: 659.9px) {
-      flex-direction: column;
-      flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-wrap: nowrap;
     }
   }
 
   &__card {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
     height: 180px;
     padding: 10px;
     
     @media (min-width: 660px) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       flex-direction: column;
       height: auto;
     }
   }
 }
-

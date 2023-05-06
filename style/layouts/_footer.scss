@@ -7,22 +7,32 @@
   }
 
   &__title {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
     text-align: center;
     color: $secondary-text-color;
   }
 
   &__bar {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
+    -webkit-box-pack: justify;
     justify-content: space-between;
     padding-top: 5px;
   }
 
   &__contacts {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-flow: column nowrap;
     font-size: 0.8125rem;
     line-height: 106%;
@@ -32,6 +42,7 @@
   &__contacts-phone {
     color: $secondary-text-color;
     font-size: 0.75rem;
+    -webkit-text-decoration-line: none;
     text-decoration-line: none;
     cursor: pointer;
 
