@@ -2,24 +2,14 @@
 @import './variables';
 @import './common';
 @import './helpers';
-
 @import './layouts/header';
 @import './layouts/layout';
 @import './layouts/footer';
-
 @import './components/title';
 @import './components/button';
 @import './components/card';
 @import './components/card-promo';
 @import './components/social-logo';
 @import './components/rate';
-
 @import './sections/goods';
 @import './sections/promo';
-
-
-// модификатор промо кнопки
-// pixel perfect
-// <div class="section-container"> или просто контейнер
-// что с градиентом
-// кроссбраузерность Safari, Chrome, Firefox
