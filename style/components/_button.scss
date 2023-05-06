@@ -1,0 +1,55 @@
+.button {
+  color: $secondary-text-color;
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  height: 40px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: $primary-text-transform;
+  cursor: pointer;
+  border-radius: $primary-border-radius;
+  background: linear-gradient(87.23deg, rgba(128, 26, 179, 0) -91.42%, #4c4cff 99.79%);
+  transition: background-color .3s;
+  z-index: 5;
+
+  @media (min-width: 660px) {
+    min-width: 180px;
+  }
+}
+
+.button:before {
+  position: absolute;
+  content: '';    
+  height: 100%;
+  width: 100%;
+  top: 0; 
+  left: 0;
+  opacity: 0;
+  z-index: -10;
+  border-radius: inherit;
+  transition: $primary-transition opacity;
+  background-image: linear-gradient(270deg, rgba(128, 26, 179, 0) -91.42%, #4c4cff 99.79%);
+}
+
+.button:hover:before {
+  opacity: 1;
+}
+
+.button--promocode {
+  color: $primary-text-color;
+  border: 1px dashed $primary-text-color;
+  background: none;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+// @media (min-width: 659.95px) {
+  .button--wide {
+    width: 100%;
+  }
+// }
